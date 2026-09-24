@@ -1,11 +1,10 @@
 import numpy as np
 
-# Gradient Descent tổng quát (dựa trên myGD1 ở slide)
 def myGD(grad, x0, eta, max_iter=100):
     x = [x0]
     for it in range(max_iter):
         x_new = x[-1] - eta * grad(x[-1])
-        if abs(grad(x_new)) < 1e-3:   # gradient đủ nhỏ thì dừng
+        if abs(grad(x_new)) < 1e-3:
             break
         x.append(x_new)
     return (x, it)
